@@ -11,6 +11,10 @@ Container.prototype.render = function () {
   return element;
 };
 
+/**
+ * Метод удаляет контейнер.
+ * @param {string} idOfContainer - id контейнера, который нужно удалить.
+ */
 Container.prototype.removeContainer = function (idOfContainer) {
   var containerToRemove;
   containerToRemove = document.getElementById(idOfContainer);
@@ -58,18 +62,26 @@ MegaMenu.prototype.render = function () {
   this.items.forEach(function (item) {
     if (item instanceof MenuItem) {
       menu.appendChild(item.render());
-      if ()
+
+      for (var prop in item) {
+        if (typeof prop === 'object') {
+          menu.appendChild(menu.render());
         }
-  })
+      }
+    }
+  });
+
+  return menu;
 };
 
-function MenuItem(href, title) {
+function MenuItem(href, title, sumMenu) {
   Container.call(this);
 
   this.tagName = 'li';
   this.className = 'menu-item';
   this.href = href;
   this.title = title;
+  this.subMenu = sumMenu;
 }
 
 MenuItem.prototype = Object.create(Container.prototype);
@@ -89,11 +101,17 @@ MenuItem.prototype.render = function () {
 window.onload = function () {
   var items = [
     new MenuItem('https://geekbrains.ru', 'Home'),
-    new MenuItem('https://geekbrains.ru', 'News'),
+    new MenuItem('https://geekbrains.ru', 'News', ['politics', 'weather', 'sport']),
     new MenuItem('https://geekbrains.ru', 'Blog')
   ];
 
-  var menu = new Menu('menu', 'menu', items);
+  // var menu = new Menu('menu', 'menu', items);
+  //
+  // document.body.appendChild(menu.render());
+  //
+  // Container.prototype.removeContainer('menu');
+
+  var menu = new MegaMenu('menu', 'menu', items);
 
   document.body.appendChild(menu.render());
 
