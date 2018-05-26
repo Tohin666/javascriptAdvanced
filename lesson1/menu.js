@@ -105,13 +105,13 @@ window.onload = function () {
     new MenuItem('https://geekbrains.ru', 'Blog')
   ];
 
-  // var menu = new Menu('menu', 'menu', items);
-  //
-  // document.body.appendChild(menu.render());
-  //
-  // Container.prototype.removeContainer('menu');
+  var menu = new Menu('menu', 'menu', items);
 
-  var menu = new MegaMenu('menu', 'menu', items);
+  document.body.appendChild(menu.render());
+
+  Container.prototype.removeContainer('menu');
+
+  menu = new MegaMenu('menu', 'menu', items);
 
   document.body.appendChild(menu.render());
 
