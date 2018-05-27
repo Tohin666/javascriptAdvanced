@@ -63,15 +63,33 @@ MegaMenu.prototype.render = function () {
     if (item instanceof MenuItem) {
       menu.appendChild(item.render());
 
-      for (var prop in item) {
-        if (typeof prop === 'object') {
-          menu.appendChild(menu.render());
-        }
+
+        if (item.subMenu !== undefined) {
+          var subMenuUl = new SubMenu();
+          menu.lastChild.appendChild(subMenuUl.render());
+
+          for (var i in item.subMenu) {
+            this.title = item.subMenu[i];
+            this.tagName= 'li';
+            menu.lastChild.lastChild.appendChild(item.render.call(this))
+          }
+
       }
     }
   });
 
   return menu;
+};
+
+function SubMenu() {
+  Menu.call(this);
+
+}
+
+SubMenu.prototype = Object.create(Menu.prototype);
+SubMenu.prototype.render = function () {
+  var ul = document.createElement(this.tagName);
+  return ul;
 };
 
 function MenuItem(href, title, sumMenu) {
