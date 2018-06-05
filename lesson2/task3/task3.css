@@ -1,0 +1,9 @@
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.gallery__thumb {
+    height: 250px;
+    margin: 5px;
+}
