@@ -27,7 +27,7 @@ Menu.prototype.render = function () {
   menu.id = this.id;
 
   this.items.forEach(function (item) {
-    if (item instanceof MenuItem) {
+    if (item instanceof Container) {
       menu.appendChild(item.render());
     }
   });
@@ -79,17 +79,29 @@ MegaMenu.prototype.render = function () {
 window.onload = function () {
   var items = [
     new MenuItem('https://geekbrains.ru', 'Home'),
-    new MenuItem('https://geekbrains.ru', 'News'),
+    new MegaMenu('childMenu', 'childMenu', [
+      new MegaMenu('childMenu', 'childMenu', [
+        new MenuItem('https://geekbrains.ru', 'Dresses'),
+        new MenuItem('https://geekbrains.ru', 'Denim'),
+        new MenuItem('https://geekbrains.ru', 'Shoes')
+      ], 'WOMEN', 'https://geekbrains.ru'),
+      new MegaMenu('childMenu', 'childMenu', [
+        new MenuItem('https://geekbrains.ru', 'Shirts'),
+        new MenuItem('https://geekbrains.ru', 'Sweaters'),
+        new MenuItem('https://geekbrains.ru', 'Shoes')
+      ], 'MEN', 'https://geekbrains.ru')
+    ], 'Catalog', 'https://geekbrains.ru'),
+    new MenuItem('https://geekbrains.ru', 'Promo'),
     new MenuItem('https://geekbrains.ru', 'Blog'),
     new MegaMenu('childMenu', 'childMenu', [
       new MenuItem('https://geekbrains.ru', 'politics'),
       new MenuItem('https://geekbrains.ru', 'weather'),
       new MenuItem('https://geekbrains.ru', 'sport')
-    ], 'Child Menu', 'https://geekbrains.ru')
+    ], 'News', 'https://geekbrains.ru'),
+    new MenuItem('https://geekbrains.ru', 'My Account')
   ];
 
   var menu = new MegaMenu('menu', 'menu', items);
 
   document.body.appendChild(menu.render());
-
 };
