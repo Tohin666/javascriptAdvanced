@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      (function ($) {
+        $(function () {
+          $('#tab1').click(function () {
+            $('#tab1Content').css('zIndex', '100');
+            $('#tab2Content').css('zIndex', '0');
+            $('#tab3Content').css('zIndex', '0');
+            $('#tab1').css('zIndex', '1000');
+            $('#tab2').css('zIndex', '0');
+            $('#tab3').css('zIndex', '0');
+          });
+          $('#tab2').click(function () {
+            $('#tab1Content').css('zIndex', '0');
+            $('#tab2Content').css('zIndex', '100');
+            $('#tab3Content').css('zIndex', '0');
+            $('#tab1').css('zIndex', '0');
+            $('#tab2').css('zIndex', '1000');
+            $('#tab3').css('zIndex', '0');
+          });
+          $('#tab3').click(function () {
+            $('#tab1Content').css('zIndex', '0');
+            $('#tab2Content').css('zIndex', '0');
+            $('#tab3Content').css('zIndex', '100');
+            $('#tab1').css('zIndex', '0');
+            $('#tab2').css('zIndex', '0');
+            $('#tab3').css('zIndex', '1000');
+          })
+        })
+
+      })(jQuery);
+    </script>
+</head>
+<body>
+<button id="tab1">tab1</button>
+<button id="tab2">tab2</button>
+<button id="tab3">tab3</button>
+
+<div id="tab1Content">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem dolores odio omnis vel veniam. Ad hic impedit
+    nostrum possimus provident quisquam, sed. Cum laborum magni ratione similique suscipit veritatis vitae!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium distinctio dolorem doloribus, excepturi
+    explicabo illo itaque nulla obcaecati, quae quia quibusdam quod ratione repellat tempora totam vitae voluptatibus.
+    Id, vero.
+</div>
+<div id="tab2Content">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores assumenda aut autem beatae cumque enim
+    ipsam natus nihil non, pariatur quas quisquam repellat reprehenderit repudiandae rerum sapiente, sequi vel.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eaque nostrum quasi recusandae. Autem dolorum
+    eveniet id labore natus quam totam. Aperiam fuga magnam maiores necessitatibus provident sed tenetur voluptatem?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi aspernatur beatae consequatur culpa doloribus
+    earum enim eveniet exercitationem fugiat nisi nobis non placeat, quam quo repellat sed unde voluptatem?
+</div>
+<div id="tab3Content">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium sed sequi totam. Adipisci earum exercitationem
+    illo in iusto maiores nulla numquam quasi quidem repellat similique, voluptate voluptates. Error, impedit, ratione.
+</div>
+
+
+</body>
+</html>

@@ -17,7 +17,7 @@ button.onclick = function () {
 
   var phone = document.getElementById('phone');
   var phoneValue = phone.value;
-  if (!(/\+7\(\d{3}\)\d{3}-\d{4}/.test(phoneValue)) || phoneValue === '') {
+  if (!(/^\+7\(\d{3}\)\d{3}-\d{4}$/.test(phoneValue)) || phoneValue === '') {
     phone.style.borderColor = 'red';
     message += '\nВведите телефон в формате +7(000)000-0000';
   } else {
@@ -26,7 +26,7 @@ button.onclick = function () {
 
   var mail = document.getElementById('mail');
   var mailValue = mail.value;
-  if (!(/\w+@\w+\.\w+/.test(mailValue)) || mailValue === '') {
+  if (!(/^[.\w]+@\w+\.\w+$/.test(mailValue)) || mailValue === '') {
     mail.style.borderColor = 'red';
     message += '\nВведите правильный e-mail';
   } else {
