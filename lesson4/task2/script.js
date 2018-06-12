@@ -1,13 +1,13 @@
 (function ($) {
   $ (function () {
     $.get(
-      'cities.json',
+      'rucity.json',
       {},
       function (cities) {
         cities.forEach(function (city) {
           $('<option/>', {
-            text: city.name,
-            value: city.name
+            text: city,
+            value: city
           }).appendTo('#city');
         })
       },
