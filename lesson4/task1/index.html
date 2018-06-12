@@ -9,25 +9,25 @@
       (function ($) {
         $(function () {
           $('#tab1').click(function () {
-            $('#tab1Content').css('zIndex', '100');
-            $('#tab2Content').css('zIndex', '0');
-            $('#tab3Content').css('zIndex', '0');
+            $('#tab1Content').show();
+            $('#tab2Content').hide();
+            $('#tab3Content').hide();
             $('#tab1').css('zIndex', '1000');
             $('#tab2').css('zIndex', '0');
             $('#tab3').css('zIndex', '0');
           });
           $('#tab2').click(function () {
-            $('#tab1Content').css('zIndex', '0');
-            $('#tab2Content').css('zIndex', '100');
-            $('#tab3Content').css('zIndex', '0');
+            $('#tab1Content').hide();
+            $('#tab2Content').show();
+            $('#tab3Content').hide();
             $('#tab1').css('zIndex', '0');
             $('#tab2').css('zIndex', '1000');
             $('#tab3').css('zIndex', '0');
           });
           $('#tab3').click(function () {
-            $('#tab1Content').css('zIndex', '0');
-            $('#tab2Content').css('zIndex', '0');
-            $('#tab3Content').css('zIndex', '100');
+            $('#tab1Content').hide();
+            $('#tab2Content').hide();
+            $('#tab3Content').show();
             $('#tab1').css('zIndex', '0');
             $('#tab2').css('zIndex', '0');
             $('#tab3').css('zIndex', '1000');
