@@ -51,39 +51,9 @@
   ],
   "reviews": [
     {
-      "text": "sadfasdf",
-      "isConfirmed": "false",
+      "text": "1 sdfasdfs",
+      "isConfirmed": "0",
       "id": 1
-    },
-    {
-      "text": "sadfasdf",
-      "isConfirmed": "false",
-      "id": 2
-    },
-    {
-      "text": "ывфываф",
-      "isConfirmed": "false",
-      "id": 3
-    },
-    {
-      "text": "dsas",
-      "isConfirmed": "false",
-      "id": 4
-    },
-    {
-      "text": "dsas",
-      "isConfirmed": "false",
-      "id": 5
-    },
-    {
-      "text": "sdfs",
-      "isConfirmed": "false",
-      "id": 6
-    },
-    {
-      "text": "sdfs",
-      "isConfirmed": "false",
-      "id": 7
     }
   ]
 }

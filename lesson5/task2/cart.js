@@ -56,13 +56,13 @@ function buildReviews() {
       reviewsItems.forEach(function (review) {
         var $li = $('<li/>', {
           text: review.text,
-          class: review.isConfirmed ? 'confirmed' : ''
+          class: review.isConfirmed == 1 ? 'confirmed' : ''
         });
         $li.append($('<button/>', {
           text: 'X',
           class: 'removeReviewButton'
         }));
-        if (!review.isConfirmed) {
+        if (review.isConfirmed == 0) {
           $li.append($('<button/>', {
             text: 'Confirme',
             class: 'confirmeReviewButton'
@@ -151,12 +151,16 @@ function buildReviews() {
         type: 'POST',
         data: {
           text: $('#reviewTextarea').val(),
-          isConfirmed: false
+          isConfirmed: 0
         },
         success: function () {
           buildReviews()
         }
       })
+    });
+    
+    $('#reviews').on('click', '.removeReviewButton', function () {
+      
     })
 
   });
