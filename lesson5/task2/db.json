@@ -43,11 +43,5 @@
       "quantity": "2"
     }
   ],
-  "reviews": [
-    {
-      "text": "1 sdfasdfs",
-      "isConfirmed": "0",
-      "id": 1
-    }
-  ]
+  "reviews": []
 }

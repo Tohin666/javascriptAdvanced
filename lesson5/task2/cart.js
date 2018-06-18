@@ -48,15 +48,17 @@ function buildCart() {
 }
 
 function buildReviews() {
-  $.ajax ({
+  $.ajax({
     url: 'http://localhost:3000/reviews/',
     type: 'GET',
     success: function (reviewsItems) {
       $('#reviews').empty();
       reviewsItems.forEach(function (review) {
         var $li = $('<li/>', {
+          'data-id': review.id,
           text: review.text,
           class: review.isConfirmed == 1 ? 'confirmed' : ''
+
         });
         $li.append($('<button/>', {
           text: 'X',
@@ -158,9 +160,28 @@ function buildReviews() {
         }
       })
     });
-    
+
     $('#reviews').on('click', '.removeReviewButton', function () {
-      
+      var reviewID = $(this).parent().attr('data-id');
+      $.ajax({
+        url: 'http://localhost:3000/reviews/' + reviewID,
+        type: 'DELETE',
+        success: function () {
+          buildReviews()
+        }
+      })
+    });
+
+    $('#reviews').on('click', '.confirmeReviewButton', function () {
+      var reviewID = $(this).parent().attr('data-id');
+      $.ajax({
+        url: 'http://localhost:3000/reviews/' + reviewID,
+        type: 'PATCH',
+        data: {isConfirmed: 1},
+        success: function () {
+          buildReviews()
+        }
+      })
     })
 
   });
