@@ -47,11 +47,38 @@ function buildCart() {
   }, 'json');
 }
 
+function buildReviews() {
+  $.ajax ({
+    url: 'http://localhost:3000/reviews/',
+    type: 'GET',
+    success: function (reviewsItems) {
+      $('#reviews').empty();
+      reviewsItems.forEach(function (review) {
+        var $li = $('<li/>', {
+          text: review.text,
+          class: review.isConfirmed ? 'confirmed' : ''
+        });
+        $li.append($('<button/>', {
+          text: 'X',
+          class: 'removeReviewButton'
+        }));
+        if (!review.isConfirmed) {
+          $li.append($('<button/>', {
+            text: 'Confirme',
+            class: 'confirmeReviewButton'
+          }));
+        }
+        $('#reviews').append($li)
+      });
+    }
+  })
+}
 
 (function ($) {
   $(function () {
     buildCart();
     buildGoodsList();
+    buildReviews();
 
     $('#goods').on('click', '.buy', function (event) {
       if (+$(this).attr('data-quantity') < 1) {
@@ -122,7 +149,13 @@ function buildCart() {
       $.ajax({
         url: 'http://localhost:3000/reviews/',
         type: 'POST',
-        data:
+        data: {
+          text: $('#reviewTextarea').val(),
+          isConfirmed: false
+        },
+        success: function () {
+          buildReviews()
+        }
       })
     })
 
