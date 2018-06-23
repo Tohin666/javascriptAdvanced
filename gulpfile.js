@@ -9,12 +9,12 @@ var myUglifyJS = require('gulp-uglify');
 
 var mySrc = {
   myPathToSCSS: myPath.resolve(__dirname, 'lesson7', 'src', 'scss', '**/*.+(scss|sass)'), // gulp.src('src/scss/styles.scss')
-  myPathToHTML: myPath.resolve(__dirname, 'lesson7', '*.html'),
+  myPathToHTML: myPath.resolve(__dirname, 'lesson7', 'src', '*.html'),
   myPathToJS: myPath.resolve(__dirname, 'lesson7', 'src', 'js', '**/*.js')
 };
 var myDest = {
-  myPathToCSS: myPath.resolve(__dirname, 'lesson7', 'src', 'css'), // .pipe(gulp.dest('src/css'))
-  myDestPathToJS: myPath.resolve(__dirname, 'lesson7', 'src', 'js')
+  myPathToCSS: myPath.resolve(__dirname, 'lesson7', 'dist', 'css'), // .pipe(gulp.dest('src/css'))
+  myDestPath: myPath.resolve(__dirname, 'lesson7', 'dist')
 };
 
 myGulp.task('myTaskSCSS', function () {
@@ -28,19 +28,19 @@ myGulp.task('myTaskSCSS', function () {
 });
 
 myGulp.task('myTaskUserefForJS', function () {
-  var userefAssets = myUserefForJS.assets();
+
   return myGulp.src(mySrc.myPathToHTML)
-    .pipe(userefAssets)
-    .pipe(myUglifyJS())
-    .pipe(userefAssets.restore())
+
+    // .pipe(myUglifyJS())
+
     .pipe(myUserefForJS())
-    .pipe(myGulp.dest(myDest.myDestPathToJS))
+    .pipe(myGulp.dest(myDest.myDestPath))
 });
 
 myGulp.task('myBrowserSync', function () {
   myBrowserSync({
       server: {
-        baseDir: myPath.resolve(__dirname, 'lesson7')
+        baseDir: myPath.resolve(__dirname, 'lesson7', 'src')
       }
   })
 });
