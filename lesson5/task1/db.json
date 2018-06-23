@@ -31,15 +31,15 @@
   ],
   "cart": [
     {
-      "id": "2",
-      "name": "iPhone 8",
-      "price": "60000",
-      "quantity": "2"
-    },
-    {
       "id": "1",
       "name": "iPhone X",
       "price": "70000",
+      "quantity": "1"
+    },
+    {
+      "id": "2",
+      "name": "iPhone 8",
+      "price": "60000",
       "quantity": "2"
     },
     {

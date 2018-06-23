@@ -1,0 +1,31 @@
+{
+  "name": "javascriptadvanced",
+  "version": "1.0.0",
+  "description": "My description",
+  "main": "index.js",
+  "scripts": {
+    "watch": "gulp myTaskWatch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tohin666/javascriptAdvanced.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tohin666/javascriptAdvanced/issues"
+  },
+  "homepage": "https://github.com/Tohin666/javascriptAdvanced#readme",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.5"
+  }
+}
