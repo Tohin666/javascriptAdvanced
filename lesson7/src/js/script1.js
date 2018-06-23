@@ -1,6 +1,6 @@
 (function ($) {
   $(function () {
 
-    $('.divd').append('<p>Test123</p>')
+    $('.divd').append('<p>7777</p>')
   })
-})(jQuery)
+})(jQuery);
