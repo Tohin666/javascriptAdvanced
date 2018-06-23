@@ -4,7 +4,7 @@
   "description": "My description",
   "main": "index.js",
   "scripts": {
-    "watch": "gulp myTaskSCSS",
+    "watch": "gulp myTaskWatch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +21,11 @@
     "jquery": "^3.3.1"
   },
   "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-sass": "^4.0.1"
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.5"
   }
 }

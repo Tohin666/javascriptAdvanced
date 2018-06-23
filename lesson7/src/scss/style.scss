@@ -1,3 +1,7 @@
-.box {
-  width: percentage(1/2);
+$topPadding: 100px;
+$leftPadding: $topPadding+300px;
+
+body{
+  padding: $topPadding $leftPadding;
+  background-color: #fffbd4;
 }
